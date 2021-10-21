@@ -1,0 +1,67 @@
+
+<div class="form">
+    <h1>ADD Employees</h1>
+<form   [formGroup] ="regform" (ngSubmit)="onlogin()">
+  <div class="fields">
+    <input type="email"    name="email"  class="form-control"  required formControlName="email"
+     placeholder="Email" ></div>
+    <div *ngIf="regform.get('email').hasError('email')"><span>Invalid email</span></div>
+    <div *ngIf="regform.get('email').touched && !regform.get('email').valid "><span>Email is highly required </span></div>
+    <div class="fields"><br>
+      <input type="password"   name="password" class="form-control" 
+      formControlName = "password" required placeholder="Password" >  </div>
+      <div *ngIf="regform.get('password').dirty">
+        <span *ngIf="regform.get('password').hasError('minlength')">
+          Min characters is 6
+        </span>
+      </div><br>
+      <div *ngIf="regform.get('password').dirty">
+        <span *ngIf="regform.get('password').hasError('maxlength')">
+          Max characters is 12
+        </span>
+           
+      </div>
+      <div *ngIf="regform.get('password').touched && !regform.get('password').valid "><span>Input a valid password</span></div>
+     
+    <div class="fields">
+      <input type="text"  name="text"  class="form-control" 
+      formControlName = "firstname" required placeholder="Username" ><br>
+      <span *ng></span>
+    </div>
+    <div *ngIf="regform.get('firstname').touched && !regform.get('firstname').valid ">
+      <span>Field is empty</span></div>
+      <div class="fields">
+        <span>Date of birth</span><br>
+        <input type="date">
+      </div><br>
+      <div class="fields">
+          <span>Favorite color</span><br>
+          <input type="color">
+        </div>
+      <br>
+  
+
+  
+   
+    <div class="fields">
+  
+      <input type="submit"  name="submit" value="SEND" class="form-control" [disabled]= "!regform.valid" >
+     
+    </div>
+</form>
+</div><br>
+<div class="success">
+  {{success}}
+ </div> 
+  
+ <router-outlet name="imgcmp">
+
+ </router-outlet>
+ <router-outlet name="sercmp">
+
+</router-outlet>
+
+ 
+
+
+

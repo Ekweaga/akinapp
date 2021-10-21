@@ -1,0 +1,51 @@
+
+<div class="form">
+    <h1>Enter details</h1>
+<form (ngSubmit) ="onlogin()"  [formGroup] ="loginform">
+  <div class="fields">
+    <input type="email"    name="email"  class="form-control"  required formControlName="email"
+     placeholder="Email" ></div>
+    <div *ngIf="loginform.get('email').hasError('email')"><span>Invalid email</span></div>
+    <div *ngIf="loginform.get('email').touched && !loginform.get('email').valid "><span>Email is highly required </span></div>
+    <div class="fields"><br>
+      <input  name="password" class="form-control" 
+      formControlName = "password" required placeholder="Password" type="bol ? 'password' : 'text'">  </div>
+      <div *ngIf="loginform.get('password').dirty">
+        <span *ngIf="loginform.get('password').hasError('minlength')">
+          Min characters is 6
+        </span>
+      </div><br>
+      <div *ngIf="loginform.get('password').dirty">
+        <span *ngIf="loginform.get('password').hasError('maxlength')">
+          Max characters is 12
+        </span>
+           
+      </div>
+      <div *ngIf="loginform.get('password').touched && !loginform.get('password').valid "><span>Input a valid password</span></div>
+   
+   
+     
+   
+      <div>
+        {{errormessage}}
+      </div>
+
+   
+   
+    <div class="fields">
+      <input type="submit"  name="submit" value="SEND" class="form-control"  >
+    </div>
+</form></div>
+<span><button (click)="show()">show & hide password</button></span>
+<div class="adv"><main><a href="/register">Not a member yet?</a></main><main><a href="/forgot">
+Forgot password ?</a></main></div>
+<div class="success">
+  {{onmessage}}
+ </div> 
+ <div>
+   <img src="vals">
+ </div>
+ 
+ 
+ 
+

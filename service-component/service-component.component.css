@@ -1,0 +1,32 @@
+div{
+   
+    margin:auto;
+    
+    padding:70px;
+    width:80%;
+    
+}
+button{
+    margin-left:20px;
+
+}
+.edit{
+    background: green;
+    color:white;
+    border:none;
+}
+.delete{
+    background:red;
+    color:white;
+    border:none;
+}
+li{
+    padding:30px;
+    list-style-type: none;
+}
+span{
+    font-size:18px;
+}
+ul{
+    margin-left:10%;
+}

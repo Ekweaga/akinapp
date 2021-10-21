@@ -1,0 +1,13 @@
+<br><br><br><br><br>
+<div>
+    <ul>
+    <li *ngFor="let item of items">
+           <span>{{item.id}} )</span> 
+       <span>{{item.firstname}}</span> 
+       <span>{{item.password}}</span> 
+       <span>{{item.email}}</span>
+        <button class='edit'(click)="update(item.id)">EDIT</button>
+        <button class='delete'  (click)="delete(item)" >DELETE</button>
+    </li>
+</ul>
+</div>

@@ -1,0 +1,50 @@
+<h1>
+  {{ title }}!
+</h1>
+
+
+<div class="form">
+  <form (ngSubmit) ="onsubmit()"  [formGroup] ="form">
+    <div class="fields">
+      <input type="number" name="id" formControlName="id" hidden>
+      <input type="email"    name="email"  class="form-control"  required formControlName="email"
+       placeholder="Email" appMain></div>
+      <div *ngIf="form.get('email').hasError('email')"><span>Invalid email</span></div>
+      <div *ngIf="form.get('email').touched && !form.get('email').valid "><span>Email is highly required </span></div>
+      <div class="fields"><br>
+        <input type="password"   name="pwd" class="form-control" 
+        formControlName = "pwd" required placeholder="Password" appMain>  </div>
+        <div *ngIf="form.get('pwd').dirty">
+          <span *ngIf="form.get('pwd').hasError('minlength')">
+            Min characters is 6
+          </span>
+        </div><br>
+        <div *ngIf="form.get('pwd').dirty">
+          <span *ngIf="form.get('pwd').hasError('maxlength')">
+            Max characters is 12
+          </span>
+             
+        </div>
+        <div *ngIf="form.get('pwd').touched && !form.get('pwd').valid "><span>Input a valid password</span></div>
+       
+      <div class="fields">
+        <input type="text"  name="text"  class="form-control" 
+        formControlName = "uname" required placeholder="Username" appMain><br>
+        <span *ng></span>
+      </div>
+      <div *ngIf="form.get('uname').touched && !form.get('uname').valid "><span>Field is empty</span></div>
+    
+
+      <img src="../assets/pic_angular.jpg">
+     
+      <div class="fields">
+        <input type="submit"  name="submit" value="SEND" class="form-control" [disabled]= "!form.valid" appMain>
+      </div>
+  </form><br>
+  <div class="success">
+    {{success}}
+   </div> 
+</div>
+
+
+

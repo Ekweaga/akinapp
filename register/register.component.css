@@ -1,0 +1,18 @@
+input{ 
+    background:lightgray;
+    width:300px;
+}
+input[type="submit"]{
+    background: blue;
+    color:white;
+    font-size: 20px;
+  
+}
+.form{
+    width:28%;
+    margin-left:400px;
+    position: relative;
+    background: white;
+    box-shadow: 2px 1px 3px rgba(0,0,0,0.6);
+    padding:50px;
+}
